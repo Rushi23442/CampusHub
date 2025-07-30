@@ -81,7 +81,7 @@ export const generateApiKey = asyncHandler(async (req,res) => {
     res.status(201).json(new ApiResponse(201, ApiKey, "api key generated successfully"))
 })
 export const getMe = asyncHandler(async (req, res) => {
-  console
+  
   const User = await user.findById(req.user._id).select("-password");
   console.log(User);
 
