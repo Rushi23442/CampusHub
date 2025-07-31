@@ -7,7 +7,7 @@ import apiKey from "../models/apiKey.model.js"
 import jwt from "jsonwebtoken"
 
 export const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password,role } = req.body;
   if (!name || !email || !password) {
     throw new ApiError(401, "all fields are required");
   }
@@ -19,6 +19,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     name,
     email,
     password,
+    role
   });
   if (!User) {
     throw new ApiError(401, "Error while registering");

@@ -23,7 +23,9 @@ export const isLoggedIn = asyncHandler(async(req,resizeBy,next) => {
 })
 // route.get('/notes',isLoggedIn,validateRoutePermission["faculty","admin"])
 export const validateRoutePermission = (roles=[]) => asyncHandler(async(req,res,next) => {
-    const {userId} = req.user._id
+    const userId= req.user._id
+
+    console.log(userId)
 
 
     if(!userId){
@@ -31,8 +33,9 @@ export const validateRoutePermission = (roles=[]) => asyncHandler(async(req,res,
     }
 
     const User = await user.findOne({
-        user :req.user._id
+        _id :req.user._id
     })
+    console.log(User)
     
     if(!User){
         throw new ApiError(401,"No User found")

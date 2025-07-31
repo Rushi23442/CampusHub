@@ -5,18 +5,18 @@ import { user } from "./user.model.js";
 const resultSchema = new mongoose.Schema(
   {
     totalMarks: {
-      type: Number,
+      type: String,
       required: true,
     },
     percentage: {
-      type: Number,
+      type: String,
       required: true,
     },
-    course: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: course,
-      required: true,
-    },
+    // course: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: course,
+    //   required: true,
+    // },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: user,

@@ -21,6 +21,6 @@ const courseSchema = new mongoose.Schema({
 },{timestamps:true})
 
 
-const course = mongoose.models("course",courseSchema)
+const course = mongoose.model("course",courseSchema)
 
 export {course}
