@@ -6,8 +6,8 @@ import { validateApikey } from "../middleware/apiKey.middlewre.js"
 
 const router = express.Router()
 
-router.post('/announcement',isLoggedIn,validateRoutePermission(["faculty","admin"]),validateApikey,postAnnouncement)
+router.post('/',isLoggedIn,validateRoutePermission(["faculty","admin"]),validateApikey,postAnnouncement)
 
-router.get('/get-announcement',isLoggedIn,validateApikey,getAnnouncement)
+router.get('/',isLoggedIn,validateApikey,getAnnouncement)
 
 export default router

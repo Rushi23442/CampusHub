@@ -6,10 +6,13 @@ import cors from "cors"
 import connectDb from "./src/utils/db.js"
 
 //import all routes
-
 import Auth from "./src/routes/user.route.js"
 import Announce from "./src/routes/announcement.route.js"
 import Result from "./src/routes/result.route.js"
+import Admin from "./src/routes/admin.route.js"
+import Course from "./src/routes/course.route.js"
+
+
 const app = express()
 const PORT = process.env.PORT||3000
 
@@ -21,9 +24,11 @@ app.use(express.json())
 app.use(cookieParser())
 
 
-app.use('/api/v1/auth',Auth)
-app.use('/api/v1/announce',Announce)
-app.use('/api/v1/result',Result)
+app.use('/api/v1/users',Auth)
+app.use('/api/v1/announcement',Announce)
+app.use('/api/v1/results',Result)
+app.use('/api/v1/admin',Admin)
+app.use('/api/v1/courses',Course)
 
 
 connectDb()

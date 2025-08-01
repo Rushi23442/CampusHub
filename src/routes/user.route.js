@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.post("/register", registerUser)
 router.post('/login',login)
-router.get('/profile',isLoggedIn,getMe)
-router.get("/generate-apikey", isLoggedIn,generateApiKey);
+router.get('/me',isLoggedIn,getMe)
+router.get("/api-key", isLoggedIn,generateApiKey);
 
 export default router

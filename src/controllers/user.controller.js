@@ -3,7 +3,7 @@ import { ApiError } from "../utils/api-error.js";
 import {ApiResponse} from "../utils/api-response.js"
 import { asyncHandler } from "../utils/async-handler.js";
 import crypto from "crypto"
-import apiKey from "../models/apiKey.model.js"
+import {apiKey} from "../models/apiKey.model.js"
 import jwt from "jsonwebtoken"
 
 export const registerUser = asyncHandler(async (req, res) => {
