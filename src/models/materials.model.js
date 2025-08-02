@@ -18,12 +18,12 @@ const materialSchema = new mongoose.Schema({
   },
   uploadedBy:{
     type: mongoose.Schema.Types.ObjectId,
-    ref:user,
+    ref:"user",
     required:true
   },
   course:{
     type: mongoose.Schema.Types.ObjectId,
-    ref:course,
+    ref:"course",
     required:true
   }
 
